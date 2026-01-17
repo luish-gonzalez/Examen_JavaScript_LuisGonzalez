@@ -271,5 +271,9 @@ sortEl.addEventListener("change", (e) => {
   applyFilters();
 });
 
+state.page = 1; // PROBANDO!
+state.pageSize = 6;
 
-
+const prevPageEl = document.querySelector("#prevPage");
+const nextPageEl = document.querySelector("#nextPage");
+const pageInfoEl = document.querySelector("#pageInfo");
