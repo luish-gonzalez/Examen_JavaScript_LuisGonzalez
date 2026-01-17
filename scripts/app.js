@@ -277,3 +277,16 @@ state.pageSize = 6;
 const prevPageEl = document.querySelector("#prevPage");
 const nextPageEl = document.querySelector("#nextPage");
 const pageInfoEl = document.querySelector("#pageInfo");
+
+function renderPagination(totalItems) {
+  const totalPages = 4;
+
+  // Ajusta page si quedó fuera (por filtros)
+  if (state.page > totalPages) state.page = totalPages;
+  if (state.page < 1) state.page = 1;
+
+  pageInfoEl.textContent = `Página ${state.page} de ${totalPages}`;
+
+  prevPageEl.disabled = state.page === 1;
+  nextPageEl.disabled = state.page === totalPages;
+}
