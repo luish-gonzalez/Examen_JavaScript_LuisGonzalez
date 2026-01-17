@@ -280,8 +280,7 @@ const pageInfoEl = document.querySelector("#pageInfo");
 
 function renderPagination(totalItems) {
   const totalPages = 4;
-
-  // Ajusta page si quedó fuera (por filtros)
+  
   if (state.page > totalPages) state.page = totalPages;
   if (state.page < 1) state.page = 1;
 
