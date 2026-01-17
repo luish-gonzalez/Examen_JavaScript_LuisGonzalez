@@ -241,7 +241,15 @@ function applyFilters() {
   if (state.sort === "title-desc")
     list.sort((a, b) => b.title.localeCompare(a.title));
 
-  renderProducts(list);
+  const totalItems = list.length;
+  renderPagination(totalItems);
+
+  const start = (state.page - 1) * state.pageSize;
+  const end = start + state.pageSize;
+  const pageList = list.slice(start, end);
+
+  renderProducts(pageList);
+
 }
 
 // evento para cargar productos al iniciar la página, asegura que el DOM exista antes de manipularlo
